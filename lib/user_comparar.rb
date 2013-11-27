@@ -28,6 +28,10 @@ module UserComparer
     def tweets
       @client.user(@username).tweets_count
     end
+
+    def requests
+      @client.user(@username).follow_request_sent
+    end
   end
 
   class Comparer
@@ -67,15 +71,15 @@ module UserComparer
       end
     end
 
-    # def request_sent
-    #   if (@user1.requests) == (@user2.requests)
-    #     return "#{@user1.username} and #{@user2.username} have a tie in requests!"
-    #   elsif (@user1.requests) > (@user2.requests)
-    #     return "#{@user1.username} has more requests than #{@user2.username}."
-    #   else (@user1.requests) < (@user2.requests)
-    #     return "#{@user2.username} has more requests than #{@user1.username}."
-    #   end
-    # end
+    def request_sent
+      if (@user1.requests) == (@user2.requests)
+        return "#{@user1.username} and #{@user2.username} have a tie in requests!"
+      elsif (@user1.requests) > (@user2.requests)
+        return "#{@user1.username} has more requests than #{@user2.username}."
+      else (@user1.requests) < (@user2.requests)
+        return "#{@user2.username} has more requests than #{@user1.username}."
+      end
+    end
   end
 end
 

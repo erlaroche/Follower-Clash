@@ -15,3 +15,5 @@ puts "And the user with the most followers is: #{comparer.compare}"
 puts "And the user with the most friends is: #{comparer.friend_count}"
 
 puts "And the user with the most tweets is: #{comparer.tweet_count}"
+
+puts "And the user with the most requests sent is #{comparer.request_sent}"
