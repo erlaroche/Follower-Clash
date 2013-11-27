@@ -3,9 +3,10 @@ require 'bundler/setup'
 
 require_relative 'lib/user_comparar'
 
-client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = ENV['CONSUMER_KEY']
-  config.consumer_secret     = ENV['CONSUMER_SECRET']
-  config.access_token         = ENV['OAUTH_TOKEN']
-  config.access_token_secret  = ENV['OAUTH_TOKEN_SECRET']
-end
+user1 = UserComparer::User.new('ornellasmike')
+user2 = UserComparer::User.new('techpeace')
+puts "#{user1.username}'s follower count: #{user1.followers}"
+puts "#{user2.username}'s follower count: #{user2.followers}"
+
+comparer = UserComparer::Comparer.new(user1, user2)
+puts "And the user with the most followers is: #{comparer.compare}"
