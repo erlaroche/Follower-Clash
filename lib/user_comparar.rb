@@ -59,13 +59,23 @@ module UserComparer
 
     def tweet_count
       if (@user1.tweets) == (@user2.tweets)
-        return "#{@user1.tweets} and #{@user2.tweets} have a tie in followers!"
+        return "#{@user1.username} and #{@user2.username} have a tie in tweets!"
       elsif (@user1.tweets) > (@user2.tweets)
-        return "#{@user1.username} has more friends than #{@user2.username}."
+        return "#{@user1.username} has more tweets than #{@user2.username}."
       else (@user1.tweets) < (@user2.tweets)
-        return "#{@user2.username} has more followers than #{@user1.username}."
+        return "#{@user2.username} has more tweets than #{@user1.username}."
       end
     end
+
+    # def request_sent
+    #   if (@user1.requests) == (@user2.requests)
+    #     return "#{@user1.username} and #{@user2.username} have a tie in requests!"
+    #   elsif (@user1.requests) > (@user2.requests)
+    #     return "#{@user1.username} has more requests than #{@user2.username}."
+    #   else (@user1.requests) < (@user2.requests)
+    #     return "#{@user2.username} has more requests than #{@user1.username}."
+    #   end
+    # end
   end
 end
 
